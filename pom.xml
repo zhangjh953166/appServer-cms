@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.sanmao.server</groupId>
+  <artifactId>appServer-cms</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>appServer-cms</name>
+  <packaging>jar</packaging>
+  
+  <parent>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-parent</artifactId>
+  	<version>1.4.1.RELEASE</version>
+  </parent>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
+  	<dependency>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
+		<version>2.2.2</version>
+	</dependency>
+	<dependency>
+  		<groupId>com.sanmao.server</groupId>
+  		<artifactId>appServer-dubbo-client</artifactId>
+  		<version>1.0-SNAPSHOT</version>
+  	</dependency>
+  	<!-- web项目启动 -->
+    <dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>io.dubbo.springboot</groupId>
+    	<artifactId>spring-boot-starter-dubbo</artifactId>
+    	<version>1.0.0</version>
+ 	</dependency>
+  </dependencies>
+  <build>
+  	<!-- 避免打包时候拷贝properties -->
+  	<resources>
+  		<resource>
+  			<directory>src/main/resources</directory>
+  			<filtering>true</filtering>
+  			<excludes>
+  				<exclude>**/*.properties</exclude>
+  			</excludes>
+  		</resource>
+  	</resources>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<configuration>
+  				<source>1.7</source>
+  				<target>1.7</target>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+</project>
