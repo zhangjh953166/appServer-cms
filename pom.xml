@@ -43,7 +43,29 @@
     	<groupId>io.dubbo.springboot</groupId>
     	<artifactId>spring-boot-starter-dubbo</artifactId>
     	<version>1.0.0</version>
+    	<exclusions>
+			<exclusion>
+				<artifactId>dubbo</artifactId>
+				<groupId>com.alibaba</groupId>
+			</exclusion>
+		</exclusions>
  	</dependency>
+ 	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>dubbo</artifactId>
+		<version>2.5.3</version>
+		<exclusions>
+			<exclusion>
+				<artifactId>spring</artifactId>
+				<groupId>org.springframework</groupId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+  		<groupId>com.netflix.hystrix</groupId>
+  		<artifactId>hystrix-core</artifactId>
+  		<version>1.5.12</version>
+	</dependency>
   </dependencies>
   <build>
   	<!-- 避免打包时候拷贝properties -->
@@ -63,6 +85,7 @@
   			<configuration>
   				<source>1.7</source>
   				<target>1.7</target>
+  				<encoding>UTF-8</encoding>
   			</configuration>
   		</plugin>
   	</plugins>
