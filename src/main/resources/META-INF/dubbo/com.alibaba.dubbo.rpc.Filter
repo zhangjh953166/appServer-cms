@@ -1,0 +1,1 @@
+hystrix=com.sanmao.server.cms.dubbo.hystrix.HystrixFilter
